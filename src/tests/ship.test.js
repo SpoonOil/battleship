@@ -1,4 +1,4 @@
-import Ship from "./ship";
+import Ship from "../ship.js";
 
 describe("Ship Class", () => {
   test("It exists", () => {
@@ -11,6 +11,14 @@ describe("Ship Class", () => {
   test("It is constructed with a length", () => {
     expect(new Ship(2).length).toBe(2);
   });
+
+  test("It has a hit function that tallies hits", () => {
+    let testShip = new Ship(2)
+    expect(testShip.hits).toBe(0)
+    testShip.hit()
+    expect(testShip.hits).toBe(1)
+    }
+)
 
   test("It is constructed with a direction", () => {
     expect(new Ship(2, 0).direction).toBe(0);
@@ -52,3 +60,4 @@ describe("Ship Class", () => {
     testShip.sunk = false;
   });
 });
+

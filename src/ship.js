@@ -12,14 +12,17 @@ class Ship {
   attack(x, y) {
     for (let segment of this.segments) {
       if (segment.x === x && segment.y === y) {
-        this.hits++;
-        this.checkSink();
+        this.hit()
         return true;
       }
     }
     return false;
   }
 
+  hit() {
+    this.hits++;
+    this.checkSink()
+  }
   checkSink() {
     if (this.hits >= this.length) {
       this.sunk = true;

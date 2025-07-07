@@ -1,0 +1,11 @@
+modules = ["nodejs-20", "web"]
+run = "npm run watchtest"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "npm run watchtest"]
+
+[[ports]]
+localPort = 8080
